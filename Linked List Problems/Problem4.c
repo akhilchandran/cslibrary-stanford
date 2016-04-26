@@ -4,6 +4,7 @@ Q:	Write a Pop() function that is the inverse of Push(). Pop() takes a non-empty
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 struct node {
         int data;
@@ -17,7 +18,7 @@ int Pop(struct node **headRef)
 	if(*headRef != NULL){
 		temp = *headRef;
 		*headRef = (*headRef)->next;
-		data = (*headRef)->data;
+		data = temp->data;
 		free(temp);
 		return data;
 	}
@@ -30,13 +31,24 @@ struct node* BuildListOfLength(int len);
 
 int main()
 {
-	int i;
+	int data;
 	struct node *list = BuildListOfLength(4);
 	printf("linked ");
 	printlinkedlist(list);
-	DeleteList(&list);
-	if(list == NULL)
-		printf("list deleted.\n");
+	data = Pop(&list);
+	printf("poped the list and top node had data: %d and now list is ", data);
+	printlinkedlist(list);
+	data = Pop(&list);
+        printf("poped the list and top node had data: %d and now list is ", data);
+	printlinkedlist(list);
+	data = Pop(&list);
+        printf("poped the list and top node had data: %d and now list is ", data);
+	printlinkedlist(list);
+	data = Pop(&list);
+        printf("poped the list and top node had data: %d and now list is ", data);
+	printlinkedlist(list);
+	printf("error will rise if tried to pop from NULL list\n");
+	data = Pop(&list);
 }
 
 void Push(struct node** headRef, int data)
@@ -61,7 +73,7 @@ struct node* BuildListOfLength(int len)
 
 void printlinkedlist(struct node *head)
 {
-	printf("list is :{");
+	printf("{");
 	while (head != NULL) {
 		printf(" %d", head->data);
 		head = head->next;
