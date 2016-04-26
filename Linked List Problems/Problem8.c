@@ -1,8 +1,7 @@
 /*
-Q:	Given a list, split it into two sublists — one for the front half, and one for
-	the back half. If the number of elements is odd, the extra element should go in
-	the front list. So FrontBackSplit() on the list {2, 3, 5, 7, 11} should yield
-	the two lists {2, 3, 5} and {7, 11}.
+Q:	Write an Append() function that takes two lists, 'a' and 'b',
+        appends 'b' onto the end of 'a',and then sets 'b' to NULL 
+        (since it is now trailing off the end of 'a').
 */
 #include <stdio.h>
 #include <stdlib.h>
