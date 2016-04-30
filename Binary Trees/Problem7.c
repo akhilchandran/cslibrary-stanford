@@ -1,12 +1,6 @@
 /*
-Q:	Given a binary tree, print out the nodes of the tree according to a
-	bottom-up "postorder" traversal -- both subtrees of a node are printed
-	out completely before the node itself is printed, and each left subtree
-	is printed before the right subtree.
-* post-order
-	1 Traverse the left subtree by recursively calling the post-order function.
-	2 Traverse the right subtree by recursively calling the post-order function.
-	3 Display the data part of the root (or current node).
+Q:	Given a binary tree and a sum, return true if the tree has a root-to-leaf path such that adding up all the
+	values along the path equals the given sum. Return false if no such path can be found
 
  */
 
